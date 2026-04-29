@@ -5,7 +5,7 @@ import sys
 # --- CONFIG ---
 GIST_ID = "Your_Gist_Id_Here"
 TOKEN = "YOUR_GITHUB_TOKEN_HERE" # <->
-FILE_NAME = "tunnel_url.txt"
+FILE_NAME = "FILE_NAME_HERE"
 
 def update_gist(new_url):
     url = f"https://api.github.com/gists/{GIST_ID}"
