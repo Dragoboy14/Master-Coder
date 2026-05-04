@@ -1,16 +1,11 @@
 #!/bin/bash
+# Server chalu karo
+ollama serve &
+sleep 10
 
-# 1. Path define kar lete hain 
-MODEL_PATH="MODEL_PATH"
-
-# 2. Llama Server ko background mein chalao
-echo "🚀 Llama Server start ho raha hai..."
-# -c 2048 context size ke liye, --chat-template qwen ke>
-llama-server -m "$MODEL_PATH" --port 8080 -c 2048 --chat-template qwen & 
-
-# thoda wait taaki server up ho jaye
-sleep 5
-
-# 3. Cloudflare tunnel + Gist update
-echo "🌐 Tunnel chalu aur Gist update ho raha hai..."
-cloudflared tunnel --url http://localhost:8080 2>&1 | tee /dev/stderr | grep --line-buffered -o 'https://[a-zA-Z0-9-]\+\.trycloudflare\.com' | xargs -I {} python update.py {}
+# Cloudflare Tunnel aur Gist Update
+cloudflared tunnel --url http://localhost:11434 2>&1 | \
+grep --line-buffered -o 'https://[a-zA-Z0-9-]\+\.trycloudflare\.com' | \
+while read -r url; do
+    python update.py "$url"
+done
