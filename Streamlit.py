@@ -7,7 +7,7 @@ import json
 GIST_RAW_URL = "https://gist.github.com/Dragoboy14/0b338953c699b52709dc1174f96e0b77"
 
 st.set_page_config(page_title="Darsh AI", page_icon="🤖")
-st.title("🤖 Darsh AI (Ollama Remote)")
+st.title("🤖 Code Master AI")
 
 # --- FUNCTION: FETCH URL FROM GIST ---
 def get_ollama_url():
