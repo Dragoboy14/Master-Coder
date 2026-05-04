@@ -4,7 +4,7 @@ import json
 
 # --- CONFIGURATION ---
 # Apni Raw Gist URL yahan dalo (Wahi jo update.py mein thi)
-GIST_RAW_URL = "0b338953c699b52709dc1174f96e0b77"
+GIST_RAW_URL = "https://gist.github.com/Dragoboy14/0b338953c699b52709dc1174f96e0b77"
 
 st.set_page_config(page_title="Darsh AI", page_icon="🤖")
 st.title("🤖 Darsh AI (Ollama Remote)")
